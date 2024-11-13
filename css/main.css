@@ -123,13 +123,13 @@ strong{
     margin: 0.2rem 0;
 }
 .add-btn1{
-    display: flex;
+    display: none;
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
     border: 1px solid var(--Rose500);
     padding: 0.65rem 1.25rem;
-    max-width: 150px;
+    min-width: 150px;
     border-radius: 20px;
     background-color: var(--Rose50);
     cursor: pointer;
@@ -140,7 +140,7 @@ strong{
     transition: all 300ms ease-in-out;
     position: absolute;
     left: 50%;
-    bottom: -32px;
+    bottom: -35px;
     z-index: 1;
     transform: translate(-50%, -50%);
 
@@ -151,6 +151,81 @@ strong{
     color: var(--red);
     }
 }
+
+.add-btn1 svg{
+    pointer-events: none;
+}
+
+.add-btn1.active{
+    display: flex;
+}
+
+.add-btn1.focus{
+    display: flex;
+}
+
+
+
+.cart-plus-minus{ 
+    display: none;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--Rose500);
+    padding: 0.65rem;
+    min-width: 150px;
+    border-radius: 20px;
+    background-color: var(--red);
+    cursor: pointer;
+    font-weight: 400;
+    text-align: center;
+    gap: 3px;
+    white-space: nowrap;
+    transition: all 300ms ease-in-out;
+    position: absolute;
+    left: 50%;
+    bottom: -36px;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    height: 43px;
+    color: white;
+}
+
+.cart-plus-minus.active{
+    display: flex;
+}
+.more-less{
+    appearance: none;
+    border: none;
+    background: none;
+    display: block;
+    height: 18px;
+    width: 18px;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+
+.more-less:hover{
+    background-color: white;
+    fill: var(--red);
+}
+
+.more-less svg:hover{
+    fill: var(--red);
+}
+
+.more-less svg{
+    fill: white;
+}
+
 
 
 .description h5{
@@ -191,28 +266,37 @@ strong{
 
 
 .empty-cart{
-    display: none;
+    /* display: block; */
     margin: 0 auto;
     text-align: center;
-
-    &:active{
-        display: block;
-    }
 }
+
+.empty-cart p{
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--Rose500);
+    white-space: nowrap;
+}
+
+.empty-cart:active{
+    display: block;
+}
+
+
+
+.full-cart{
+    display: none;
+}
+
+.full-cart:active{
+    display: block;
+}
+
 
 .price{
     color: var(--red);
     font-weight: 600;
 }
-
-.full-cart{
-    display: block;
-
-    &:active{
-        display: none;
-    }
-}
-
 
 @media (max-width: 960px){
      .grid-container {
@@ -250,6 +334,12 @@ strong{
     border-bottom: 1px solid var(--gray);
 }
 
+.cart-quantity-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .cart-quantity{
     display: flex;
     flex-flow: column nowrap;
@@ -272,7 +362,7 @@ strong{
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: 84%;
 }
 
 .quantity{
@@ -370,13 +460,19 @@ strong{
     cursor: pointer;
     border: none;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1rem 0;
     width: 98%;
     border-radius: 50vh;
     padding: 1rem;
     color: white;
     margin-top: 25px;
+    transition: all 300ms ease-in-out;
+}
 
+.confirm-btn:hover,
+.confirm-btn:active,
+.confirm-btn:focus {
+    background-color: var(--Rose400);
 }
 
 
